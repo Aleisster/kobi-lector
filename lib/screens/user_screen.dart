@@ -16,7 +16,7 @@ class UserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('偏好'),
+        title: const Text('Preferencias'),
         actions: [
           VersionBadged(
             child: IconButton(
@@ -171,11 +171,11 @@ class _UserInfoCardState extends State<UserInfoCard> {
     if (logging) {
       name = "登录中";
     } else if (loginState.state == 0) {
-      name = "未登录";
+      name = "No ha iniciado sesión";
     } else if (loginState.state == 1) {
       name = loginState.member!.nickname;
     } else if (loginState.state == 2) {
-      name = "登录失败";
+      name = "Error al iniciar sesión";
     } else {
       throw Exception('Unknown loginState.state: ${loginState.state}');
     }
