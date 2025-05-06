@@ -13,15 +13,15 @@ Future<String?> initApiHost() async {
 }
 
 String currentApiHostName() {
-  return _currentApiHost == "" ? "未设置" : _currentApiHost;
+  return _currentApiHost == "" ? "No establecido" : _currentApiHost;
 }
 
 Future<dynamic> inputApiHost(BuildContext context) async {
   String? input = await displayTextInputDialog(
     context,
     src: _currentApiHost,
-    title: '服务器',
-    hint: '请输入服务器',
+    title: 'Servidor',
+    hint: 'Por favor ingrese servidor',
     desc: " ( 例如 https://domain.com ) ",
   );
   if (input != null) {
@@ -34,7 +34,7 @@ Widget apiHostSetting() {
   return StatefulBuilder(
     builder: (BuildContext context, void Function(void Function()) setState) {
       return ListTile(
-        title: const Text("服务器地址"),
+        title: const Text("Dirección de servidor"),
         subtitle: Text(currentApiHostName()),
         onTap: () async {
           await inputApiHost(context);
